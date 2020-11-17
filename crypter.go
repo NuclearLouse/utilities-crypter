@@ -33,8 +33,8 @@ func Encrypt(key, text string) (string, error) {
 
 // Decrypt function. Accepts a private key and a cypher in string format.
 // Returns the decrypted text.
-func Decrypt(key, text string) (string, error) {
-	ciphertext, _ := hex.DecodeString(text)
+func Decrypt(key, cipherText string) (string, error) {
+	ciphertext, _ := hex.DecodeString(cipherText)
 	block, err := aes.NewCipher([]byte(key))
 	if err != nil {
 		return "", err
